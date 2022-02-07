@@ -148,6 +148,10 @@ const getEspecialidades =async (req,res)=>{
     const response = await db.any('select * from especialidades where esp_estado=true')
     res.json(response)
 }
+const getMedicoEspecialidades =async (req,res)=>{
+    const response = await db.any('select * from medicoespecialidad')
+    res.json(response)
+}
 const postCreateEspecialidad =async (req,res)=>{
     const {esp_id,esp_nombre,esp_estado}=req.body
     const response = await db.any(`INSERT INTO especialidades (esp_id,esp_nombre,esp_estado) 
@@ -258,5 +262,6 @@ module.exports={
     getCitas,
     postCreateCita,
     putUpdateCita,
-    deleteCita
+    deleteCita,
+    getMedicoEspecialidades
 }

@@ -4,7 +4,7 @@ const config={
     port:'5433',
     database:'citasDB',
     user:'postgres',
-    password:'root'
+    password:'12345'
 }
 const pgp = pgPromise({})
 const db = pgp(config)
